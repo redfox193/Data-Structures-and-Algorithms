@@ -80,6 +80,7 @@ void ab_dijkstra(vector< vector < pair<int, long long> > > &list, vector<long lo
     }
 }
 
+///Example of usage
 int main() {
     int n, s, f;
     cin >> n >> s >> f;
