@@ -4,7 +4,6 @@
 
 using namespace std;
 
-
 struct edge
 {
     int u, v, w;
