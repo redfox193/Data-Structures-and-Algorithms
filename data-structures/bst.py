@@ -18,23 +18,24 @@ class BinaryTree:
         if self.root is None:
             self.root = node
         else:
-            self.__add_node(self.root, node)
-    
-    def __add_node(self, root: TreeNode, node: TreeNode) -> None:
-        if root.val == node.val:
-            return
-        
-        if root.val > node.val:
-            if root.left is not None:
-                self.__add_node(root.left, node)
+            parent = self.root
+
+            while parent.val != node.val:
+                if parent.val > node.val:
+                    next_node = parent.left
+                else:
+                    next_node = parent.right
+
+                if next_node is None:
+                    break
+                parent = next_node
+            
+            if parent.val == node.val:
+                return
+            if parent.val > node.val:
+                parent.left = node
             else:
-                root.left = node
-        
-        if root.val < node.val:
-            if root.right is not None:
-                self.__add_node(root.right, node)
-            else:
-                root.right = node
+                parent.right = node
                 
     def delete_node(self, value: Any) -> None:
         parent = self.root
