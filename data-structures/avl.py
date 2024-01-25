@@ -15,7 +15,8 @@ class AvlTree:
     def __init__(self, root: TreeNode = None) -> None:
         self.root = root
         
-    def add_node(self, node: TreeNode) -> None:
+    def add(self, value: Any) -> None:
+        node = TreeNode(value)
         if self.root is None:
             self.root = node
         else:
@@ -46,7 +47,7 @@ class AvlTree:
                 self.__balance(st[-1], parent)
             self.__balance(self.root, st.pop())
 
-    def delete_node(self, value: Any) -> None:
+    def delete(self, value: Any) -> None:
         parent = self.root
         node = self.root
         st = [self.root]
