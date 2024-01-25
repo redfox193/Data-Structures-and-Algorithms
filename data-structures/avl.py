@@ -15,7 +15,8 @@ class AvlTree:
     def __init__(self, root: TreeNode = None) -> None:
         self.root = root
         
-    def add_node(self, node: TreeNode) -> None:
+    def add_node(self, value: Any) -> None:
+        node = TreeNode(value)
         if self.root is None:
             self.root = node
         else:
