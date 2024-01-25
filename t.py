@@ -246,3 +246,22 @@ class AvlTree:
         while node.right is not None:
             node = node.right
         self.max = node.val
+
+    def traversal(self, root: TreeNode):
+        if root is None:
+            print("null", end=" ")
+            return
+        print(root.val, end=" ")
+        self.traversal(root.left)
+        self.traversal(root.right)
+
+
+avl = AvlTree()
+avl.add(72)
+avl.add(30)
+avl.add(190)
+avl.add(1)
+avl.traversal(avl.root)
+print()
+avl.delete(72)
+avl.traversal(avl.root)
